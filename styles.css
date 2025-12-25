@@ -1,15 +1,19 @@
 /* ========================================
-   Global Styles for Uravation Corporate Site
+   Uravation - Bold, Distinctive Design System
+   Tech Brutalism × Japanese Minimalism
    ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Crimson+Pro:wght@400;600;700&display=swap');
 
 :root {
     --navy: #0a1628;
     --navy-light: #1a2744;
     --cyan: #00d9ff;
-    --cyan-dark: #0099cc;
-    --warm-white: #f5f1e8;
+    --cyan-glow: rgba(0, 217, 255, 0.3);
+    --warm-cream: #f5f1e8;
     --gray: #8892a6;
-    --text: #333333;
+    --text: #1a1a1a;
+    --spacing: clamp(1rem, 3vw, 3rem);
 }
 
 * {
@@ -18,163 +22,250 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background: var(--cyan);
+    color: var(--navy);
+}
+
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background: white;
+    font-family: 'Crimson Pro', serif;
+    background: var(--warm-cream);
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
+    font-size: 18px;
 }
 
-.mono {
-    font-family: 'JetBrains Mono', monospace;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 /* ========================================
-   Header Navigation
+   Header - Minimal & Bold
    ======================================== */
 
 .header {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: sticky;
+    background: transparent;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    padding: 2rem var(--spacing);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    mix-blend-mode: difference;
+}
+
+.header.scrolled {
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem var(--spacing);
+    mix-blend-mode: normal;
 }
 
 .header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
-    max-width: 1400px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0;
 }
 
-.logo img {
-    height: 40px;
-    width: auto;
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.02em;
 }
 
 .nav {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
 }
 
 .nav a {
     text-decoration: none;
-    color: var(--navy);
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
-    transition: color 0.3s;
     font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: color 0.3s;
 }
 
-.nav a:hover {
-    color: var(--cyan);
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--cyan);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav a:hover::after {
+    width: 100%;
 }
 
 .nav-cta {
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 2rem;
     background: var(--cyan);
     color: var(--navy) !important;
-    border-radius: 50px;
+    border-radius: 0;
     font-weight: 700;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    transition: all 0.3s;
+}
+
+.nav-cta::after {
+    display: none;
 }
 
 .nav-cta:hover {
-    background: #00f0ff;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--cyan-glow);
 }
 
 @media (max-width: 768px) {
     .nav {
         display: none;
     }
+
+    .header {
+        mix-blend-mode: normal;
+        background: var(--navy);
+    }
 }
 
 /* ========================================
-   Main Container
+   Hero - Asymmetric & Bold
    ======================================== */
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
-/* ========================================
-   Section Headers
-   ======================================== */
-
-.section-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--cyan-dark);
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.section-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--navy);
-}
-
-/* ========================================
-   Cards
-   ======================================== */
-
-.card {
-    background: white;
-    padding: 3rem 2rem;
-    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
-    border-left: 3px solid var(--navy);
-    position: relative;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    background: var(--cyan);
-    opacity: 0.05;
-    clip-path: polygon(100% 0, 100% 100%, 0 0);
-}
-
-.text-center {
-    text-align: center;
-}
-
-/* ========================================
-   Buttons
-   ======================================== */
-
-.btn {
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.hero {
+    min-height: 100vh;
+    background: var(--navy);
+    color: white;
     position: relative;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 var(--spacing);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+    pointer-events: none;
+    animation: glow 8s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.6; transform: translateY(-20px); }
+}
+
+.hero-content {
+    max-width: 700px;
+    z-index: 1;
+    padding: 4rem 0;
+}
+
+.hero-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+}
+
+.hero h1 .highlight {
+    color: var(--cyan);
+    position: relative;
     display: inline-block;
 }
 
-.btn-primary {
-    background: var(--cyan);
-    color: var(--navy);
-    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+.hero .subtitle {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.3;
 }
 
-.btn-primary::before {
+.hero .description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    color: var(--gray);
+    max-width: 600px;
+}
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hero-visual .code-block {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    padding: 2rem;
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    color: var(--cyan);
+    line-height: 1.6;
+    backdrop-filter: blur(10px);
+}
+
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: var(--cyan);
+    color: var(--navy);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -183,76 +274,264 @@ body {
     transition: opacity 0.3s;
 }
 
-.btn-primary:hover::before {
+.cta-button:hover::before {
     opacity: 1;
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px var(--cyan-glow);
 }
 
-.btn-secondary {
+.cta-secondary {
     background: transparent;
-    color: var(--navy);
-    border: 2px solid var(--navy);
-    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    color: white;
+    border: 2px solid white;
 }
 
-.btn-secondary:hover {
-    background: var(--navy);
-    color: var(--warm-white);
-    transform: translateY(-2px);
-}
-
-/* ========================================
-   Forms
-   ======================================== */
-
-.form-label {
-    display: block;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.form-input,
-.form-select,
-.form-textarea {
-    width: 100%;
-    padding: 0.875rem 1rem;
-    font-size: 1rem;
-    font-family: 'Crimson Pro', serif;
-    border: 2px solid #e5e7eb;
+.cta-secondary:hover {
     background: white;
     color: var(--navy);
-    transition: all 0.3s;
-    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
 
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--cyan);
-    box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
-}
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 6rem;
+    }
 
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-    line-height: 1.6;
+    .hero-visual {
+        display: none;
+    }
 }
 
 /* ========================================
-   Footer
+   Services - Brutal Cards
+   ======================================== */
+
+.services {
+    padding: clamp(4rem, 10vw, 8rem) var(--spacing);
+    background: var(--warm-cream);
+}
+
+.services-header {
+    max-width: 800px;
+    margin-bottom: 4rem;
+}
+
+.section-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--navy);
+    line-height: 1.1;
+}
+
+.section-description {
+    font-size: 1.3rem;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+}
+
+.service-card {
+    background: white;
+    padding: 3rem;
+    border-left: 4px solid var(--navy);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: var(--cyan);
+    opacity: 0.05;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+    transition: opacity 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--cyan);
+}
+
+.service-card:hover::before {
+    opacity: 0.1;
+}
+
+.service-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--cyan);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--navy);
+}
+
+.service-card p {
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.service-features {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.service-features li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.service-features li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   About - Asymmetric Layout
+   ======================================== */
+
+.about {
+    padding: clamp(4rem, 10vw, 8rem) var(--spacing);
+    background: var(--navy);
+    color: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about-label {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 700;
+    line-height: 0.9;
+    color: rgba(255, 255, 255, 0.05);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.about-text h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.about-mission {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: var(--cyan);
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-label {
+        writing-mode: horizontal-tb;
+        text-align: center;
+    }
+}
+
+/* ========================================
+   CTA Section - Bold & Direct
+   ======================================== */
+
+.cta-section {
+    padding: clamp(6rem, 12vw, 10rem) var(--spacing);
+    background: var(--warm-cream);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--navy);
+    line-height: 1.1;
+}
+
+.cta-section p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+}
+
+/* ========================================
+   Footer - Minimal & Structured
    ======================================== */
 
 .footer {
     background: var(--navy);
     color: white;
-    padding: 4rem 2rem 2rem;
+    padding: 4rem var(--spacing) 2rem;
 }
 
 .footer .container {
@@ -262,26 +541,30 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
     margin-bottom: 3rem;
 }
 
 .footer-section h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: white;
 }
 
 .footer-section h4 {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--cyan);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
 
 .footer-section p {
     color: var(--gray);
     line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 .footer-section ul {
@@ -289,13 +572,14 @@ body {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .footer-section a {
     color: var(--gray);
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 1rem;
 }
 
 .footer-section a:hover {
@@ -307,9 +591,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
-    border-top: 1px solid var(--navy-light);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--gray);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .footer-bottom a {
@@ -321,7 +605,18 @@ body {
     text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .footer-bottom {
         flex-direction: column;
         gap: 1rem;
@@ -330,34 +625,17 @@ body {
 }
 
 /* ========================================
-   Responsive
+   Utilities
    ======================================== */
 
-@media (max-width: 768px) {
-    .container {
-        padding: 3rem 1.5rem;
-    }
-
-    .site-header {
-        padding: 2rem 1.5rem;
-    }
-
-    .card {
-        padding: 2rem 1.5rem;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
 }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 2rem 1rem;
-    }
-
-    .site-header {
-        padding: 1.5rem 1rem;
+@media (max-width: 768px) {
+    :root {
+        font-size: 16px;
     }
 }
