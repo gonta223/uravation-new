@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要 | 株式会社Uravation</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="株式会社Uravationの企業理念、ビジョン、会社概要。AIテクノロジーを通じて、日本の生産性と創造性を最大化します。">
+    <meta name="keywords" content="会社概要, 企業理念, ビジョン, ミッション, AI企業">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://new.uravation.com/about/">
+    <meta property="og:title" content="会社概要 | 株式会社Uravation">
+    <meta property="og:description" content="AIテクノロジーを通じて、日本の生産性と創造性を最大化します。">
+    <meta property="og:image" content="https://new.uravation.com/og-image.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://new.uravation.com/about/">
+    <meta name="twitter:title" content="会社概要 | 株式会社Uravation">
+    <meta name="twitter:description" content="AIテクノロジーを通じて、日本の生産性と創造性を最大化します。">
+    <meta name="twitter:image" content="https://new.uravation.com/og-image.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://new.uravation.com/about/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .mission-section {
+            padding: 6rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .mission-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+        }
+
+        .vm-card {
+            background: var(--warm-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .vm-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 1.5rem;
+        }
+
+        .vm-card p {
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .values-section {
+            padding: 6rem 2rem;
+            background: var(--warm-white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--cyan), #0088ff);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .company-info {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .info-table {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .info-value {
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/logo.svg" alt="Uravation" width="150" height="40">
+            </a>
+            <nav class="nav">
+                <a href="/about/">About us</a>
+                <a href="/service/">Service</a>
+                <a href="/case/">Case study</a>
+                <a href="/news/">News</a>
+                <a href="/contact/" class="nav-cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>私たちについて</h1>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <p class="mission-title">
+            AIテクノロジーを通じて、<br>
+            日本の生産性と創造性を最大化する
+        </p>
+
+        <div class="vision-mission">
+            <div class="vm-card">
+                <h3>ビジョン</h3>
+                <p>
+                    全ての企業が最先端のAI技術を活用できる社会を実現し、
+                    日本のイノベーションを加速させる。
+                    AIの民主化を推進し、誰もがAIの恩恵を受けられる未来を創造します。
+                </p>
+            </div>
+
+            <div class="vm-card">
+                <h3>ミッション</h3>
+                <p>
+                    実践的なAI教育と高度なAI開発サービスを通じて、
+                    企業の課題解決とデジタルトランスフォーメーションを支援。
+                    専門性と実践性を兼ね備えたソリューションを提供します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <h2 class="section-title">私たちの価値観</h2>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h4>実践性</h4>
+                <p>
+                    理論だけでなく、実際のビジネスシーンで即活用できる実践的なスキルとソリューションを提供します。
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🔬</div>
+                <h4>専門性</h4>
+                <p>
+                    多数の企業実績を持つAI研究員が、最新の技術動向を踏まえた高度な専門知識を提供します。
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h4>伴走支援</h4>
+                <p>
+                    一方的なサービス提供ではなく、お客様と共に課題を解決し、成長をサポートします。
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h4>スピード</h4>
+                <p>
+                    急速に進化するAI技術のトレンドをいち早くキャッチし、迅速にサービスに反映します。
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h4>成長志向</h4>
+                <p>
+                    お客様の成長を最優先に考え、長期的な視点でビジネスの発展を支援します。
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h4>信頼性</h4>
+                <p>
+                    セキュリティとプライバシーを重視し、安心してご利用いただけるサービスを提供します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Info -->
+    <section class="company-info">
+        <h2 class="section-title">会社概要</h2>
+
+        <div class="info-table">
+            <div class="info-row">
+                <div class="info-label">会社名</div>
+                <div class="info-value">株式会社Uravation</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">事業内容</div>
+                <div class="info-value">
+                    生成AI研修事業<br>
+                    AI受託開発事業<br>
+                    クリエイティブ制作事業
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">代表者</div>
+                <div class="info-value">佐藤 卓</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">お問い合わせ</div>
+                <div class="info-value">
+                    <a href="/contact/" style="color: var(--cyan); text-decoration: none;">お問い合わせフォーム</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>株式会社Uravation</h3>
+                    <p>最先端のAI研修・開発特化型企業</p>
+                </div>
+                <div class="footer-section">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="/service/">AI研修</a></li>
+                        <li><a href="/service/">受託開発</a></li>
+                        <li><a href="/service/">クリエイティブ制作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>企業情報</h4>
+                    <ul>
+                        <li><a href="/about/">会社概要</a></li>
+                        <li><a href="/case/">事例</a></li>
+                        <li><a href="/news/">ニュース</a></li>
+                        <li><a href="/contact/">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Uravation Inc. All rights reserved.</p>
+                <a href="/privacy/">プライバシーポリシー</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/accessibility.js" defer></script>
+    <script src="/analytics.js" defer></script>
+</body>
+</html>

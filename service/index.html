@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス | 株式会社Uravation</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Uravationが提供する3つのサービス：AI研修、受託開発、クリエイティブ制作。ChatGPTを中心とした生成AI技術で、お客様のビジネスを支援します。">
+    <meta name="keywords" content="AI研修, ChatGPT研修, 生成AI, 受託開発, AIシステム開発, クリエイティブ制作, AI画像生成">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://new.uravation.com/service/">
+    <meta property="og:title" content="サービス | 株式会社Uravation">
+    <meta property="og:description" content="AI研修、受託開発、クリエイティブ制作の3つのサービスで、企業のAI活用を支援します。">
+    <meta property="og:image" content="https://new.uravation.com/og-image.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://new.uravation.com/service/">
+    <meta name="twitter:title" content="サービス | 株式会社Uravation">
+    <meta name="twitter:description" content="AI研修、受託開発、クリエイティブ制作の3つのサービスで、企業のAI活用を支援します。">
+    <meta name="twitter:image" content="https://new.uravation.com/og-image.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://new.uravation.com/service/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+
+        .services-detail {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .service-detail {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .service-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .service-detail-content h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .service-detail-content .label {
+            display: inline-block;
+            background: var(--cyan);
+            color: var(--navy);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-content p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        .service-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .service-detail-visual {
+            background: var(--warm-white);
+            border-radius: 12px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .service-icon-large {
+            font-size: 8rem;
+            opacity: 0.3;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 4rem auto 0;
+        }
+
+        .cta-box h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--cyan);
+            color: var(--navy);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
+            background: #00f0ff;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-detail:nth-child(even) {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/logo.svg" alt="Uravation" width="150" height="40">
+            </a>
+            <nav class="nav">
+                <a href="/about/">About us</a>
+                <a href="/service/">Service</a>
+                <a href="/case/">Case study</a>
+                <a href="/news/">News</a>
+                <a href="/contact/" class="nav-cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>サービス</h1>
+        <p>Uravationが提供する3つのソリューション</p>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="services-detail">
+        <!-- AI研修 -->
+        <div class="service-detail">
+            <div class="service-detail-content">
+                <span class="label">Service 01</span>
+                <h2>AI研修</h2>
+                <p>
+                    ChatGPTを中心とした生成AI研修を企業向けに提供しています。
+                    多数の企業実績を持つAI研究員が直接指導し、実践的なスキルを習得いただけます。
+                </p>
+                <p>
+                    基礎から応用まで、貴社の課題に合わせてカスタマイズした研修プログラムを設計。
+                    座学だけでなく、実際のビジネスシーンを想定したハンズオンワークショップを実施します。
+                </p>
+                <ul class="service-features">
+                    <li>ChatGPT/Claude等の主要LLMの活用方法</li>
+                    <li>プロンプトエンジニアリング実践</li>
+                    <li>業務効率化のためのAI活用事例</li>
+                    <li>自社データを活用したRAGシステム構築</li>
+                    <li>AI導入における組織変革支援</li>
+                </ul>
+            </div>
+            <div class="service-detail-visual">
+                <div class="service-icon-large">🎓</div>
+            </div>
+        </div>
+
+        <!-- 受託開発 -->
+        <div class="service-detail">
+            <div class="service-detail-content">
+                <span class="label">Service 02</span>
+                <h2>受託開発</h2>
+                <p>
+                    AI技術を活用したシステム開発、業務効率化ツールの開発を行います。
+                    お客様のニーズに合わせたオーダーメイドのソリューションを提供いたします。
+                </p>
+                <p>
+                    最新のAI技術（LLM、RAG、エージェント等）を活用し、
+                    従来のシステムでは実現が困難だった高度な自動化・知的処理を実現します。
+                </p>
+                <ul class="service-features">
+                    <li>社内ドキュメント検索システム（RAG）</li>
+                    <li>カスタマーサポート自動化（AIチャットボット）</li>
+                    <li>業務プロセス自動化（AIエージェント）</li>
+                    <li>データ分析・予測システム</li>
+                    <li>既存システムへのAI機能追加</li>
+                </ul>
+            </div>
+            <div class="service-detail-visual">
+                <div class="service-icon-large">💻</div>
+            </div>
+        </div>
+
+        <!-- クリエイティブ制作 -->
+        <div class="service-detail">
+            <div class="service-detail-content">
+                <span class="label">Service 03</span>
+                <h2>クリエイティブ制作</h2>
+                <p>
+                    生成AIを活用したクリエイティブ画像製作、デザイン制作を行います。
+                    最新のAI技術で、高品質なビジュアルコンテンツを迅速に提供します。
+                </p>
+                <p>
+                    Midjourney、Stable Diffusion、DALL-E等の画像生成AIを駆使し、
+                    従来の制作手法では実現困難だった表現を可能にします。
+                </p>
+                <ul class="service-features">
+                    <li>マーケティングビジュアル制作</li>
+                    <li>プレゼンテーション資料のデザイン</li>
+                    <li>SNS投稿用画像生成</li>
+                    <li>キャラクターデザイン</li>
+                    <li>プロダクトイメージの可視化</li>
+                </ul>
+            </div>
+            <div class="service-detail-visual">
+                <div class="service-icon-large">🎨</div>
+            </div>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="cta-box">
+            <h3>サービスに関するご相談</h3>
+            <p>お客様の課題に合わせた最適なソリューションをご提案します</p>
+            <a href="/contact/" class="cta-button">お問い合わせ</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>株式会社Uravation</h3>
+                    <p>最先端のAI研修・開発特化型企業</p>
+                </div>
+                <div class="footer-section">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="/service/">AI研修</a></li>
+                        <li><a href="/service/">受託開発</a></li>
+                        <li><a href="/service/">クリエイティブ制作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>企業情報</h4>
+                    <ul>
+                        <li><a href="/about/">会社概要</a></li>
+                        <li><a href="/case/">事例</a></li>
+                        <li><a href="/news/">ニュース</a></li>
+                        <li><a href="/contact/">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Uravation Inc. All rights reserved.</p>
+                <a href="/privacy/">プライバシーポリシー</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/accessibility.js" defer></script>
+    <script src="/analytics.js" defer></script>
+</body>
+</html>

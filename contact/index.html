@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 株式会社Uravation</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="株式会社Uravationへのお問い合わせ。AI研修、受託開発、クリエイティブ制作に関するご相談はこちらから。">
+    <meta name="keywords" content="お問い合わせ, 相談, AI研修, 受託開発, 見積もり">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://new.uravation.com/contact/">
+    <meta property="og:title" content="お問い合わせ | 株式会社Uravation">
+    <meta property="og:description" content="AI研修、受託開発、クリエイティブ制作に関するご相談はこちらから。">
+    <meta property="og:image" content="https://new.uravation.com/og-image.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://new.uravation.com/contact/">
+    <meta name="twitter:title" content="お問い合わせ | 株式会社Uravation">
+    <meta name="twitter:description" content="AI研修、受託開発、クリエイティブ制作に関するご相談はこちらから。">
+    <meta name="twitter:image" content="https://new.uravation.com/og-image.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://new.uravation.com/contact/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .required {
+            color: #ff4444;
+            margin-left: 0.3rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: white;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+            line-height: 1.6;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--cyan);
+            color: var(--navy);
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
+            background: #00f0ff;
+        }
+
+        .info-note {
+            background: var(--warm-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/logo.svg" alt="Uravation" width="150" height="40">
+            </a>
+            <nav class="nav">
+                <a href="/about/">About us</a>
+                <a href="/service/">Service</a>
+                <a href="/case/">Case study</a>
+                <a href="/news/">News</a>
+                <a href="/contact/" class="nav-cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>お問い合わせ</h1>
+        <p>
+            弊社サービスにご興味をお持ちいただきありがとうございます。<br>
+            こちらのフォームよりご連絡ください。<br>
+            内容確認後、担当者から折り返しご連絡させていただきます。
+        </p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="info-note">
+                <strong>営業時間：</strong>平日 10:00〜18:00<br>
+                お問い合わせいただいた内容は、2営業日以内にご返信させていただきます。
+            </div>
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label class="form-label">
+                        会社名 <span class="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="company"
+                        class="form-input"
+                        required
+                        placeholder="株式会社〇〇"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        お名前 <span class="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-input"
+                        required
+                        placeholder="山田 太郎"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        メールアドレス <span class="required">*</span>
+                    </label>
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-input"
+                        required
+                        placeholder="example@company.com"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        電話番号
+                    </label>
+                    <input
+                        type="tel"
+                        name="phone"
+                        class="form-input"
+                        placeholder="03-1234-5678"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        お問い合わせ種別 <span class="required">*</span>
+                    </label>
+                    <select name="inquiry_type" class="form-select" required>
+                        <option value="">選択してください</option>
+                        <option value="ai_training">AI研修について</option>
+                        <option value="development">受託開発について</option>
+                        <option value="creative">クリエイティブ制作について</option>
+                        <option value="consultation">その他のご相談</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        お問い合わせ内容 <span class="required">*</span>
+                    </label>
+                    <textarea
+                        name="message"
+                        class="form-textarea"
+                        required
+                        placeholder="具体的なご相談内容をご記入ください"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    送信する
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>株式会社Uravation</h3>
+                    <p>最先端のAI研修・開発特化型企業</p>
+                </div>
+                <div class="footer-section">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="/service/">AI研修</a></li>
+                        <li><a href="/service/">受託開発</a></li>
+                        <li><a href="/service/">クリエイティブ制作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>企業情報</h4>
+                    <ul>
+                        <li><a href="/about/">会社概要</a></li>
+                        <li><a href="/case/">事例</a></li>
+                        <li><a href="/news/">ニュース</a></li>
+                        <li><a href="/contact/">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Uravation Inc. All rights reserved.</p>
+                <a href="/privacy/">プライバシーポリシー</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/accessibility.js" defer></script>
+    <script src="/analytics.js" defer></script>
+</body>
+</html>
