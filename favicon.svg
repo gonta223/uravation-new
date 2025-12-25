@@ -1,0 +1,16 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#0a1628" rx="4"/>
+
+  <!-- Hexagon -->
+  <g transform="translate(16, 16)">
+    <polygon points="0,-8 7,-4 7,4 0,8 -7,4 -7,-4"
+             fill="none"
+             stroke="#00d9ff"
+             stroke-width="1.5"/>
+
+    <!-- Inner triangle -->
+    <polygon points="0,-4 3.5,2 -3.5,2"
+             fill="#00d9ff"/>
+  </g>
+</svg>

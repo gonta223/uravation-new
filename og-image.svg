@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2a4a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="200" fill="#00d9ff" opacity="0.05"/>
+  <circle cx="1100" cy="530" r="180" fill="#00d9ff" opacity="0.05"/>
+
+  <!-- Company name -->
+  <text x="600" y="250" font-family="Noto Sans JP, sans-serif" font-size="80" font-weight="700" fill="white" text-anchor="middle">
+    Uravation
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="330" font-family="Noto Sans JP, sans-serif" font-size="36" font-weight="500" fill="#00d9ff" text-anchor="middle">
+    最先端のAI研修・開発特化型企業
+  </text>
+
+  <!-- Description -->
+  <text x="600" y="420" font-family="Noto Sans JP, sans-serif" font-size="24" fill="#8892a6" text-anchor="middle">
+    AIテクノロジーを通じて、
+  </text>
+  <text x="600" y="460" font-family="Noto Sans JP, sans-serif" font-size="24" fill="#8892a6" text-anchor="middle">
+    日本の生産性と創造性を最大化する
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="400" y="550" width="400" height="3" fill="#00d9ff" opacity="0.5"/>
+</svg>

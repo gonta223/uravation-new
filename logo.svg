@@ -1,0 +1,37 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#0a1628" rx="20"/>
+
+  <!-- Geometric Shape -->
+  <g transform="translate(200, 140)">
+    <!-- Hexagon -->
+    <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30"
+             fill="none"
+             stroke="#00d9ff"
+             stroke-width="6"
+             stroke-linecap="round"
+             stroke-linejoin="round"/>
+
+    <!-- Inner triangle -->
+    <polygon points="0,-30 26,15 -26,15"
+             fill="#00d9ff"/>
+  </g>
+
+  <!-- Text -->
+  <text x="200" y="280"
+        font-family="'JetBrains Mono', monospace"
+        font-size="32"
+        font-weight="700"
+        fill="#00d9ff"
+        text-anchor="middle">
+    AI AGENT
+  </text>
+
+  <text x="200" y="320"
+        font-family="'Noto Sans JP', sans-serif"
+        font-size="20"
+        fill="#8892a6"
+        text-anchor="middle">
+    活用本
+  </text>
+</svg>
