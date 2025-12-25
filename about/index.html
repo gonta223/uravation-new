@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会社概要 | 株式会社Uravation</title>
+    <title>会社概要 | Uravation</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="株式会社Uravationの企業理念、ビジョン、会社概要。AIテクノロジーを通じて、日本の生産性と創造性を最大化します。">
@@ -12,14 +12,14 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://new.uravation.com/about/">
-    <meta property="og:title" content="会社概要 | 株式会社Uravation">
+    <meta property="og:title" content="会社概要 | Uravation">
     <meta property="og:description" content="AIテクノロジーを通じて、日本の生産性と創造性を最大化します。">
     <meta property="og:image" content="https://new.uravation.com/og-image.svg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://new.uravation.com/about/">
-    <meta name="twitter:title" content="会社概要 | 株式会社Uravation">
+    <meta name="twitter:title" content="会社概要 | Uravation">
     <meta name="twitter:description" content="AIテクノロジーを通じて、日本の生産性と創造性を最大化します。">
     <meta name="twitter:image" content="https://new.uravation.com/og-image.svg">
 
@@ -29,136 +29,188 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
-    <!-- Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
 
     <style>
         .page-hero {
-            background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+            min-height: 70vh;
+            background: var(--navy);
             color: white;
-            padding: 6rem 2rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 8rem var(--spacing) 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, var(--cyan-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-hero-content {
+            max-width: 1000px;
+            position: relative;
+            z-index: 1;
         }
 
         .page-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
+            line-height: 1.1;
         }
 
-        .mission-section {
-            padding: 6rem 2rem;
-            background: white;
-            text-align: center;
+        .mission-statement {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--cyan);
+            margin-bottom: 2rem;
         }
 
-        .mission-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--navy);
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto 3rem;
+        .vision-section {
+            padding: clamp(6rem, 12vw, 10rem) var(--spacing);
+            background: var(--warm-cream);
         }
 
-        .vision-mission {
+        .vision-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 4rem auto 0;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .vm-card {
-            background: var(--warm-white);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            text-align: left;
+        .vision-card {
+            background: white;
+            padding: 4rem;
+            border-left: 4px solid var(--navy);
+            clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+            position: relative;
         }
 
-        .vm-card h3 {
-            font-size: 1.5rem;
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: var(--cyan);
+            opacity: 0.05;
+            clip-path: polygon(100% 0, 100% 100%, 0 0);
+        }
+
+        .vision-card h3 {
+            font-size: 2rem;
             font-weight: 700;
             color: var(--cyan);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .vm-card p {
+        .vision-card p {
+            font-size: 1.2rem;
             line-height: 1.8;
             color: var(--text);
         }
 
         .values-section {
-            padding: 6rem 2rem;
-            background: var(--warm-white);
+            padding: clamp(6rem, 12vw, 10rem) var(--spacing);
+            background: white;
         }
 
-        .section-title {
+        .values-header {
             text-align: center;
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 5rem;
+        }
+
+        .values-header h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 4rem;
+            margin-bottom: 1.5rem;
         }
 
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .value-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            background: var(--warm-cream);
+            padding: 3rem;
+            border-left: 3px solid var(--cyan);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-left-color: var(--navy);
         }
 
         .value-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--cyan), #0088ff);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            font-size: 2rem;
+            display: block;
         }
 
         .value-card h4 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--navy);
             margin-bottom: 1rem;
         }
 
         .value-card p {
+            font-size: 1.05rem;
             line-height: 1.8;
             color: var(--text);
         }
 
         .company-info {
-            padding: 6rem 2rem;
-            background: white;
+            padding: clamp(6rem, 12vw, 10rem) var(--spacing);
+            background: var(--navy);
+            color: white;
+        }
+
+        .info-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .info-header h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .info-table {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
         }
 
         .info-row {
             display: grid;
             grid-template-columns: 200px 1fr;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #e5e7eb;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .info-row:last-child {
@@ -166,15 +218,32 @@
         }
 
         .info-label {
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--cyan);
+            font-size: 1.1rem;
         }
 
         .info-value {
-            color: var(--text);
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .info-value a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        .info-value a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
             .info-row {
                 grid-template-columns: 1fr;
                 gap: 0.5rem;
@@ -184,13 +253,11 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
-            <a href="../" class="logo">
-                <img src="../logo.svg" alt="Uravation" width="150" height="40">
-            </a>
+            <a href="../" class="logo">Uravation</a>
             <nav class="nav">
-                <a href="../about/">About us</a>
+                <a href="../about/">About</a>
                 <a href="../service/">Service</a>
                 <a href="../case/">Case study</a>
                 <a href="../news/">News</a>
@@ -201,18 +268,24 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
-        <h1>私たちについて</h1>
+        <div class="page-hero-content">
+            <p class="hero-eyebrow">ABOUT US</p>
+            <h1>私たちについて</h1>
+            <p class="mission-statement">
+                AIテクノロジーを通じて、<br>
+                日本の生産性と創造性を最大化する
+            </p>
+            <p style="font-size: 1.2rem; color: var(--gray); line-height: 1.8;">
+                株式会社Uravationは、AI技術の専門性と実践的な教育指導を兼ね備えた企業です。<br>
+                多数の企業実績を持つAI研究員が、最先端のAI技術を活用したサービスを提供いたします。
+            </p>
+        </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="mission-section">
-        <p class="mission-title">
-            AIテクノロジーを通じて、<br>
-            日本の生産性と創造性を最大化する
-        </p>
-
-        <div class="vision-mission">
-            <div class="vm-card">
+    <!-- Vision & Mission -->
+    <section class="vision-section">
+        <div class="vision-grid">
+            <div class="vision-card">
                 <h3>ビジョン</h3>
                 <p>
                     全ての企業が最先端のAI技術を活用できる社会を実現し、
@@ -221,7 +294,7 @@
                 </p>
             </div>
 
-            <div class="vm-card">
+            <div class="vision-card">
                 <h3>ミッション</h3>
                 <p>
                     実践的なAI教育と高度なAI開発サービスを通じて、
@@ -232,13 +305,16 @@
         </div>
     </section>
 
-    <!-- Values Section -->
+    <!-- Values -->
     <section class="values-section">
-        <h2 class="section-title">私たちの価値観</h2>
+        <div class="values-header">
+            <p class="section-eyebrow">OUR VALUES</p>
+            <h2>私たちの価値観</h2>
+        </div>
 
         <div class="values-grid">
             <div class="value-card">
-                <div class="value-icon">🎯</div>
+                <span class="value-icon">🎯</span>
                 <h4>実践性</h4>
                 <p>
                     理論だけでなく、実際のビジネスシーンで即活用できる実践的なスキルとソリューションを提供します。
@@ -246,7 +322,7 @@
             </div>
 
             <div class="value-card">
-                <div class="value-icon">🔬</div>
+                <span class="value-icon">🔬</span>
                 <h4>専門性</h4>
                 <p>
                     多数の企業実績を持つAI研究員が、最新の技術動向を踏まえた高度な専門知識を提供します。
@@ -254,7 +330,7 @@
             </div>
 
             <div class="value-card">
-                <div class="value-icon">🤝</div>
+                <span class="value-icon">🤝</span>
                 <h4>伴走支援</h4>
                 <p>
                     一方的なサービス提供ではなく、お客様と共に課題を解決し、成長をサポートします。
@@ -262,7 +338,7 @@
             </div>
 
             <div class="value-card">
-                <div class="value-icon">⚡</div>
+                <span class="value-icon">⚡</span>
                 <h4>スピード</h4>
                 <p>
                     急速に進化するAI技術のトレンドをいち早くキャッチし、迅速にサービスに反映します。
@@ -270,7 +346,7 @@
             </div>
 
             <div class="value-card">
-                <div class="value-icon">🌱</div>
+                <span class="value-icon">🌱</span>
                 <h4>成長志向</h4>
                 <p>
                     お客様の成長を最優先に考え、長期的な視点でビジネスの発展を支援します。
@@ -278,7 +354,7 @@
             </div>
 
             <div class="value-card">
-                <div class="value-icon">🔒</div>
+                <span class="value-icon">🔒</span>
                 <h4>信頼性</h4>
                 <p>
                     セキュリティとプライバシーを重視し、安心してご利用いただけるサービスを提供します。
@@ -289,7 +365,10 @@
 
     <!-- Company Info -->
     <section class="company-info">
-        <h2 class="section-title">会社概要</h2>
+        <div class="info-header">
+            <p class="hero-eyebrow">COMPANY INFO</p>
+            <h2>会社概要</h2>
+        </div>
 
         <div class="info-table">
             <div class="info-row">
@@ -314,7 +393,7 @@
             <div class="info-row">
                 <div class="info-label">お問い合わせ</div>
                 <div class="info-value">
-                    <a href="../contact/" style="color: var(--cyan); text-decoration: none;">お問い合わせフォーム</a>
+                    <a href="../contact/">お問い合わせフォーム</a>
                 </div>
             </div>
         </div>
@@ -325,7 +404,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>株式会社Uravation</h3>
+                    <h3>Uravation</h3>
                     <p>最先端のAI研修・開発特化型企業</p>
                 </div>
                 <div class="footer-section">
@@ -342,18 +421,40 @@
                         <li><a href="../about/">会社概要</a></li>
                         <li><a href="../case/">事例</a></li>
                         <li><a href="../news/">ニュース</a></li>
-                        <li><a href="../contact/">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <ul>
+                        <li><a href="../contact/">Contact</a></li>
+                        <li><a href="../privacy/">プライバシーポリシー</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Uravation Inc. All rights reserved.</p>
-                <a href="../privacy/">プライバシーポリシー</a>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
     <script src="../accessibility.js" defer></script>
     <script src="../analytics.js" defer></script>
 </body>

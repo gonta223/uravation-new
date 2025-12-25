@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サービス | 株式会社Uravation</title>
+    <title>サービス | Uravation</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Uravationが提供する3つのサービス：AI研修、受託開発、クリエイティブ制作。ChatGPTを中心とした生成AI技術で、お客様のビジネスを支援します。">
@@ -12,14 +12,14 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://new.uravation.com/service/">
-    <meta property="og:title" content="サービス | 株式会社Uravation">
+    <meta property="og:title" content="サービス | Uravation">
     <meta property="og:description" content="AI研修、受託開発、クリエイティブ制作の3つのサービスで、企業のAI活用を支援します。">
     <meta property="og:image" content="https://new.uravation.com/og-image.svg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://new.uravation.com/service/">
-    <meta name="twitter:title" content="サービス | 株式会社Uravation">
+    <meta name="twitter:title" content="サービス | Uravation">
     <meta name="twitter:description" content="AI研修、受託開発、クリエイティブ制作の3つのサービスで、企業のAI活用を支援します。">
     <meta name="twitter:image" content="https://new.uravation.com/og-image.svg">
 
@@ -29,43 +29,63 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
-    <!-- Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
 
     <style>
         .page-hero {
-            background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+            min-height: 60vh;
+            background: var(--navy);
             color: white;
-            padding: 6rem 2rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 8rem var(--spacing) 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, var(--cyan-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .page-hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
         }
 
         .page-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.1;
         }
 
         .page-hero p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: var(--gray);
         }
 
-        .services-detail {
-            padding: 6rem 2rem;
-            background: white;
+        .service-detail-section {
+            padding: clamp(4rem, 10vw, 8rem) var(--spacing);
+            background: var(--warm-cream);
         }
 
         .service-detail {
-            max-width: 1200px;
-            margin: 0 auto 6rem;
+            max-width: 1400px;
+            margin: 0 auto 8rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 6rem;
             align-items: center;
         }
 
@@ -77,28 +97,55 @@
             direction: ltr;
         }
 
-        .service-detail-content h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 700;
+        .service-detail-content .service-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.875rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--cyan);
             margin-bottom: 1.5rem;
-            color: var(--navy);
+            font-weight: 700;
         }
 
-        .service-detail-content .label {
-            display: inline-block;
-            background: var(--cyan);
-            color: var(--navy);
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .service-detail-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            color: var(--navy);
+            line-height: 1.1;
         }
 
         .service-detail-content p {
+            font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: var(--text);
+        }
+
+        .service-detail-visual {
+            background: white;
+            border-left: 4px solid var(--navy);
+            padding: 4rem;
+            position: relative;
+            clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+        }
+
+        .service-detail-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: var(--cyan);
+            opacity: 0.05;
+            clip-path: polygon(100% 0, 100% 100%, 0 0);
+        }
+
+        .service-icon-large {
+            font-size: 8rem;
+            text-align: center;
+            opacity: 0.3;
         }
 
         .service-features {
@@ -107,79 +154,52 @@
         }
 
         .service-features li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
+            padding: 1rem 0;
+            padding-left: 2.5rem;
             position: relative;
             color: var(--text);
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
         }
 
         .service-features li::before {
-            content: "✓";
+            content: "→";
             position: absolute;
             left: 0;
             color: var(--cyan);
             font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .service-detail-visual {
-            background: var(--warm-white);
-            border-radius: 12px;
-            padding: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-        }
-
-        .service-icon-large {
-            font-size: 8rem;
-            opacity: 0.3;
+            font-size: 1.5rem;
         }
 
         .cta-box {
-            background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+            background: var(--navy);
             color: white;
-            padding: 4rem 2rem;
+            padding: 6rem var(--spacing);
             text-align: center;
-            border-radius: 12px;
-            max-width: 900px;
-            margin: 4rem auto 0;
+            margin-top: 4rem;
         }
 
         .cta-box h3 {
-            font-size: 2rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
         }
 
         .cta-box p {
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
             color: var(--gray);
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background: var(--cyan);
-            color: var(--navy);
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
-            background: #00f0ff;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .service-detail {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
             }
 
             .service-detail:nth-child(even) {
@@ -190,13 +210,11 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
-            <a href="../" class="logo">
-                <img src="../logo.svg" alt="Uravation" width="150" height="40">
-            </a>
+            <a href="../" class="logo">Uravation</a>
             <nav class="nav">
-                <a href="../about/">About us</a>
+                <a href="../about/">About</a>
                 <a href="../service/">Service</a>
                 <a href="../case/">Case study</a>
                 <a href="../news/">News</a>
@@ -207,16 +225,19 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
-        <h1>サービス</h1>
-        <p>Uravationが提供する3つのソリューション</p>
+        <div class="page-hero-content">
+            <p class="hero-eyebrow">WHAT WE DO</p>
+            <h1>サービス</h1>
+            <p>Uravationが提供する3つのソリューション</p>
+        </div>
     </section>
 
     <!-- Services Detail -->
-    <section class="services-detail">
+    <section class="service-detail-section">
         <!-- AI研修 -->
         <div class="service-detail">
             <div class="service-detail-content">
-                <span class="label">Service 01</span>
+                <p class="service-number">SERVICE 01</p>
                 <h2>AI研修</h2>
                 <p>
                     ChatGPTを中心とした生成AI研修を企業向けに提供しています。
@@ -242,7 +263,7 @@
         <!-- 受託開発 -->
         <div class="service-detail">
             <div class="service-detail-content">
-                <span class="label">Service 02</span>
+                <p class="service-number">SERVICE 02</p>
                 <h2>受託開発</h2>
                 <p>
                     AI技術を活用したシステム開発、業務効率化ツールの開発を行います。
@@ -268,7 +289,7 @@
         <!-- クリエイティブ制作 -->
         <div class="service-detail">
             <div class="service-detail-content">
-                <span class="label">Service 03</span>
+                <p class="service-number">SERVICE 03</p>
                 <h2>クリエイティブ制作</h2>
                 <p>
                     生成AIを活用したクリエイティブ画像製作、デザイン制作を行います。
@@ -304,7 +325,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>株式会社Uravation</h3>
+                    <h3>Uravation</h3>
                     <p>最先端のAI研修・開発特化型企業</p>
                 </div>
                 <div class="footer-section">
@@ -321,18 +342,40 @@
                         <li><a href="../about/">会社概要</a></li>
                         <li><a href="../case/">事例</a></li>
                         <li><a href="../news/">ニュース</a></li>
-                        <li><a href="../contact/">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <ul>
+                        <li><a href="../contact/">Contact</a></li>
+                        <li><a href="../privacy/">プライバシーポリシー</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Uravation Inc. All rights reserved.</p>
-                <a href="../privacy/">プライバシーポリシー</a>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
     <script src="../accessibility.js" defer></script>
     <script src="../analytics.js" defer></script>
 </body>
